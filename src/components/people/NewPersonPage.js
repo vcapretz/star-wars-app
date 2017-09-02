@@ -40,7 +40,7 @@ class NewPersonPage extends React.Component {
 
     save(event) {
         event.preventDefault();
-        this.props.actions.createPerson(this.state.person)
+        this.props.actions.createPerson(this.state.person);
     }
 
     render() {

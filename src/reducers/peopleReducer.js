@@ -8,7 +8,7 @@ export default function peopleReducer(state = initialState.people, action) {
         case types.LOAD_PEOPLE_SUCCESS:
             return action.people;
         case types.CREATE_PERSON_SUCCESS:
-            browserHistory.push(`/people/${action.person._id}`)
+            browserHistory.push(`/people/${action.person._id}`);
             return [
                 ...state.filter(person => person._id !== action.person._id),
                 Object.assign({}, action.person)
@@ -21,7 +21,7 @@ export default function peopleReducer(state = initialState.people, action) {
         case types.DELETE_PERSON_SUCCESS: {
             const newState = Object.assign([], state);
             const indexOfPersonToDelete = state.findIndex(person => {
-                return person.id == action.person._id
+                return person.id == action.person._id;
             });
 
             newState.splice(indexOfPersonToDelete, 1);

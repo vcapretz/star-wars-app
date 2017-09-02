@@ -46,7 +46,7 @@ class PersonPage extends React.Component {
     }
 
     delete(event) {
-        this.props.actions.deletePerson(this.state.person)
+        this.props.actions.deletePerson(this.state.person);
     }
 
     render() {

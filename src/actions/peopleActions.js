@@ -44,8 +44,8 @@ export function deletePerson(person) {
                 return;
             }).catch(error => {
                 throw (error);
-            })
-    }
+            });
+    };
 }
 
 export function loadSuccess(people) {
@@ -61,5 +61,5 @@ export function createPersonSuccess(person) {
 }
 
 export function deletePersonSuccess(person) {
-    return { type: types.DELETE_PERSON_SUCCESS, person }
+    return { type: types.DELETE_PERSON_SUCCESS, person };
 }
