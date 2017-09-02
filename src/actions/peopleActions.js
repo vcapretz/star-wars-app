@@ -2,7 +2,7 @@ import swAPI from '../api/swAPI';
 import * as types from './actionTypes';
 
 export function loadPeople() {
-    return function(dispatch) {
+    return function (dispatch) {
         return swAPI.getPeople()
             .then(people => {
                 dispatch(loadSuccess(people.items));
@@ -13,10 +13,23 @@ export function loadPeople() {
 }
 
 export function updatePerson(person) {
-    return function(dispatch) {
+    return function (dispatch) {
         return swAPI.updatePerson(person)
             .then(response => {
                 dispatch(updatePersonSuccess(response.result.data));
+            }).catch(error => {
+                throw (error);
+            });
+    };
+}
+
+export function createPerson(person) {
+    return function (dispatch) {
+        return swAPI.createPerson(person)
+            .then(response => {
+                dispatch(createPersonSuccess(response.result.data));
+
+                return response.result.data;
             }).catch(error => {
                 throw (error);
             });
@@ -29,4 +42,8 @@ export function loadSuccess(people) {
 
 export function updatePersonSuccess(person) {
     return { type: types.UPDATE_PERSON_SUCCESS, person };
+}
+
+export function createPersonSuccess(person) {
+    return { type: types.CREATE_PERSON_SUCCESS, person };
 }

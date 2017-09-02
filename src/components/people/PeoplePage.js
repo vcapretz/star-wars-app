@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router';
 
 import { connect } from 'react-redux';
 import * as peopleActions from '../../actions/peopleActions';
@@ -11,7 +12,11 @@ class PeoplePage extends React.Component {
 
         return (
             <div className='col-md-12'>
-                <h1>People</h1>
+                <h1>People
+                    <Link to={'/people/new'} className='btn btn-primary'>
+                            new person
+                    </Link>
+                </h1>
                 <div className='col-md-4'>
                     <PeopleList people={people} />
                 </div>

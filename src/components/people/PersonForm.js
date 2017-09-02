@@ -26,6 +26,42 @@ class PersonForm extends React.Component {
                         value={this.props.person.eye_color}
                         onChange={this.props.onChange} />
 
+                    <TextInput
+                        name='gender'
+                        label='gender'
+                        value={this.props.person.gender}
+                        onChange={this.props.onChange} />
+
+                    <TextInput
+                        name='hair_color'
+                        label='hair_color'
+                        value={this.props.person.hair_color}
+                        onChange={this.props.onChange} />
+
+                    <TextInput
+                        name='height'
+                        label='height'
+                        value={this.props.person.height}
+                        onChange={this.props.onChange} />
+
+                    <TextInput
+                        name='homeworld'
+                        label='homeworld'
+                        value={this.props.person.homeworld}
+                        onChange={this.props.onChange} />
+
+                    <TextInput
+                        name='mass'
+                        label='mass'
+                        value={this.props.person.mass}
+                        onChange={this.props.onChange} />
+
+                    <TextInput
+                        name='skin_color'
+                        label='skin_color'
+                        value={this.props.person.skin_color}
+                        onChange={this.props.onChange} />
+
                     <input
                         type='submit'
                         disabled={this.props.saving}

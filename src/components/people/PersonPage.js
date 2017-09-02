@@ -62,6 +62,12 @@ class PersonPage extends React.Component {
                 <h1>{this.props.person.name}</h1>
                 <p>Birth year: {this.props.person.birth_year}</p>
                 <p>Eye color: {this.props.person.eye_color}</p>
+                <p>Gender: {this.props.person.gender}</p>
+                <p>Hair color: {this.props.person.hair_color}</p>
+                <p>Height: {this.props.person.height}</p>
+                <p>Homeworld: {this.props.person.homeworld}</p>
+                <p>Mass: {this.props.person.mass}</p>
+                <p>Skin color: {this.props.person.skin_color}</p>
                 <button onClick={this.toggleEdit}
                     className='btn btn-default'>Edit</button>
             </div>
@@ -75,7 +81,17 @@ PersonPage.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-    let person = { name: '', birth_year: '', eye_color: '' };
+    let person = {
+        name: '',
+        birth_year: '',
+        eye_color: '',
+        gender: '',
+        hair_color: '',
+        height: '',
+        homeworld: '',
+        mass: '',
+        skin_color: '',
+    };
     const personId = ownProps.params.id;
 
     if (state.people.length > 0) {

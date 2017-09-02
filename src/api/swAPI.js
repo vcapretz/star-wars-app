@@ -28,6 +28,27 @@ class swAPI {
                 return error;
             });
     }
+
+    static createPerson(person) {
+        const newPerson = Object.assign({}, person);
+        delete newPerson._id;
+        delete newPerson.__v;
+
+        const request = new Request('http://localhost:5000/people', {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            }),
+            body: JSON.stringify(newPerson)
+        });
+
+        return fetch(request)
+            .then(response => {
+                return response.json();
+            }).catch(error => {
+                return error;
+            });
+    }
 }
 
 export default swAPI;
