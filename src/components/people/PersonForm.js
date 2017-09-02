@@ -40,7 +40,8 @@ class PersonForm extends React.Component {
 PersonForm.propTypes = {
     person: React.PropTypes.object.isRequired,
     onSave: React.PropTypes.func.isRequired,
-    onChange: React.PropTypes.func.isRequired
+    onChange: React.PropTypes.func.isRequired,
+    saving: React.PropTypes.bool
 };
 
 export default PersonForm;

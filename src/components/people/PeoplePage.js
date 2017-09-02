@@ -24,7 +24,8 @@ class PeoplePage extends React.Component {
 }
 
 PeoplePage.propTypes = {
-    people: PropTypes.array.isRequired
+    people: PropTypes.array.isRequired,
+    children: PropTypes.object
 };
 
 function mapStateToProps(state, ownProps) {

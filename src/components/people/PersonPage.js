@@ -28,7 +28,7 @@ class PersonPage extends React.Component {
     }
 
     toggleEdit() {
-        this.setState({ isEditing: !this.state.isEditing })
+        this.setState({ isEditing: !this.state.isEditing });
     }
 
     updateState(event) {
@@ -63,11 +63,11 @@ class PersonPage extends React.Component {
                 <p>Birth year: {this.props.person.birth_year}</p>
                 <p>Eye color: {this.props.person.eye_color}</p>
                 <button onClick={this.toggleEdit}
-                    className="btn btn-default">Edit</button>
+                    className='btn btn-default'>Edit</button>
             </div>
         );
     }
-};
+}
 
 PersonPage.propTypes = {
     person: PropTypes.object.isRequired,

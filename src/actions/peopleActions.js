@@ -28,5 +28,5 @@ export function loadSuccess(people) {
 }
 
 export function updatePersonSuccess(person) {
-    return { type: types.UPDATE_PERSON_SUCCESS, person }
+    return { type: types.UPDATE_PERSON_SUCCESS, person };
 }

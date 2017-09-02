@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "babel-node tools/server.js",
-    "build": "babel-node tools/server.js",
-    "lint:watch": "npm run lint -- --watch"
+    "lint": "esw webpack.config.* src tools"
   },
   "repository": {
     "type": "git",
