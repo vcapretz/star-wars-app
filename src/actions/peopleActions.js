@@ -36,6 +36,18 @@ export function createPerson(person) {
     };
 }
 
+export function deletePerson(person) {
+    return function (dispatch) {
+        return swAPI.deletePerson(person)
+            .then(() => {
+                dispatch(deletePersonSuccess(person));
+                return;
+            }).catch(error => {
+                throw (error);
+            })
+    }
+}
+
 export function loadSuccess(people) {
     return { type: types.LOAD_PEOPLE_SUCCESS, people };
 }
@@ -46,4 +58,8 @@ export function updatePersonSuccess(person) {
 
 export function createPersonSuccess(person) {
     return { type: types.CREATE_PERSON_SUCCESS, person };
+}
+
+export function deletePersonSuccess(person) {
+    return { type: types.DELETE_PERSON_SUCCESS, person }
 }

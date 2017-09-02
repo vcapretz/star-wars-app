@@ -49,6 +49,22 @@ class swAPI {
                 return error;
             });
     }
+
+    static deletePerson(person) {
+        const request = new Request(`http://localhost:5000/people/${person._id}`, {
+            method: 'DELETE',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        });
+
+        return fetch(request)
+            .then(response => {
+                return response.json();
+            }).catch(error => {
+                return error;
+            });
+    }
 }
 
 export default swAPI;

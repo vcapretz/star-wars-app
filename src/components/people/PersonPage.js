@@ -17,6 +17,7 @@ class PersonPage extends React.Component {
         this.updateState = this.updateState.bind(this);
         this.toggleEdit = this.toggleEdit.bind(this);
         this.save = this.save.bind(this);
+        this.delete = this.delete.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -24,7 +25,7 @@ class PersonPage extends React.Component {
             this.setState({ person: nextProps.person });
         }
 
-        this.setState({saving: false, isEditing: false});
+        this.setState({ saving: false, isEditing: false });
     }
 
     toggleEdit() {
@@ -42,6 +43,10 @@ class PersonPage extends React.Component {
     save(event) {
         event.preventDefault();
         this.props.actions.updatePerson(this.state.person);
+    }
+
+    delete(event) {
+        this.props.actions.deletePerson(this.state.person)
     }
 
     render() {
@@ -70,6 +75,8 @@ class PersonPage extends React.Component {
                 <p>Skin color: {this.props.person.skin_color}</p>
                 <button onClick={this.toggleEdit}
                     className='btn btn-default'>Edit</button>
+                <button onClick={this.delete}
+                    className='btn btn-default'>Delete</button>
             </div>
         );
     }
