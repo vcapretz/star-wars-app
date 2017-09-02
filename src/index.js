@@ -7,11 +7,11 @@ import { Provider } from 'react-redux';
 
 import configureStore from './store/configureStore';
 import routes from './routes';
-import { loadPeople } from './actions/apiActions';
+import { loadPeople } from './actions/peopleActions';
 
 const store = configureStore();
 
-store.dispatch(routes());
+store.dispatch(loadPeople());
 
 render(
     <Provider store={store}>

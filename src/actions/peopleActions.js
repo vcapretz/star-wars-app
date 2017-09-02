@@ -1,4 +1,5 @@
 import swAPI from '../api/swAPI';
+import * as types from './actionTypes'; 
 
 export function loadPeople() {
     return dispatch => {
@@ -9,4 +10,8 @@ export function loadPeople() {
                 throw (error);
             });
     };
+}
+
+export function loadSuccess(people) {
+    return { type: types.LOAD_PEOPLE_SUCCESS, people };
 }
