@@ -6,7 +6,6 @@ import * as peopleActions from '../../actions/peopleActions';
 import PeopleList from './PeopleList';
 
 class PeoplePage extends React.Component {
-
     render() {
         const { people } = this.props;
 
@@ -14,7 +13,7 @@ class PeoplePage extends React.Component {
             <div className='col-md-12'>
                 <h1>People</h1>
                 <div className='col-md-4'>
-                    <PeopleList cats={people} />
+                    <PeopleList people={people} />
                 </div>
                 <div className='col-md-8'>
                     {this.props.children}
@@ -23,7 +22,6 @@ class PeoplePage extends React.Component {
         );
     }
 }
-
 
 PeoplePage.propTypes = {
     people: PropTypes.array.isRequired
@@ -34,4 +32,4 @@ function mapStateToProps(state, ownProps) {
     return { people };
 }
 
-export default connect(mapStateToProps)(PeoplePage); 
+export default connect(mapStateToProps)(PeoplePage);
